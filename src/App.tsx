@@ -11,6 +11,7 @@ import ListPaslonPage from "./pages/ListPaslon";
 import ListPartaiPage from "./pages/ListPartai";
 import AddPartaiPage from "./pages/AddPartai";
 import AddPaslonPage from "./pages/AddPaslon";
+import CardAdmin from "./layout/CardAdmin";
 
 const App: React.FC = () => {
   const [isUserLoggedIn] = useState(true);
@@ -26,11 +27,31 @@ const App: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={checkLogin(isUserLoggedIn, userBiasa)}>
-        <Route path="/admin" element={<AdminPage />} />
-        <Route path="/listPaslon" element={<ListPaslonPage />} />
-        <Route path="/listPartai" element={<ListPartaiPage />} />
-        <Route path="/addPartai" element={<AddPartaiPage admin={true} />} />
-        <Route path="/addPaslon" element={<AddPaslonPage admin={true} />} />
+        <Route
+          path="/admin"
+          element={<AdminPage isUserLoggedIn={isUserLoggedIn} />}
+        />
+        <Route
+          path="/listPaslon"
+          element={<ListPaslonPage isUserLoggedIn={isUserLoggedIn} />}
+        />
+        <Route
+          path="/listPartai"
+          element={<ListPartaiPage isUserLoggedIn={isUserLoggedIn} />}
+        />
+        <Route path="/tes" element={<CardAdmin />} />
+        <Route
+          path="/addPartai"
+          element={
+            <AddPartaiPage isUserLoggedIn={isUserLoggedIn} admin={false} />
+          }
+        />
+        <Route
+          path="/addPaslon"
+          element={
+            <AddPaslonPage isUserLoggedIn={isUserLoggedIn} admin={false} />
+          }
+        />
         <Route
           path="/modalVote"
           element={<ModalVotePage isUserLoggedIn={isUserLoggedIn} />}

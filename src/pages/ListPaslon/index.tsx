@@ -3,11 +3,13 @@ import { Text } from "../../components";
 import Navbar from "../../layout/Navbar";
 import data from "../../services/paslon.json";
 import TableComponent from "../../layout/TabelPaslon";
-
-const ListPaslonPage: React.FC = () => {
+interface PropsLogin {
+  isUserLoggedIn: boolean;
+}
+const ListPaslonPage: React.FC<PropsLogin> = ({ isUserLoggedIn }) => {
   return (
     <>
-      <Navbar />
+      <Navbar isUserLoggedIn={isUserLoggedIn} />
       <div className="bg-white-A700 flex flex-col font-inter items-center justify-start mx-auto pb-[619px] w-full">
         <Text
           className="mt-[70px] text-5xl sm:text-[38px] md:text-[44px] text-light_green-900"

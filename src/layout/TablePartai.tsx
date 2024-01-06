@@ -5,14 +5,12 @@ interface Paslon {
   nama: string;
   no: number;
   visiMisi: string;
-  koaloasi: string;
+  alamat: string;
 }
-
 interface TableProps {
   data: Paslon[];
 }
-
-const TableComponent: React.FC<TableProps> = ({ data }) => {
+const TabelPartai: React.FC<TableProps> = ({ data }) => {
   return (
     <div className="overflow-x-auto w-full">
       <table className="w-full text-md  rtl:text-right text-gray-500 dark:text-gray-400 border-collapse border border-slate-300 ">
@@ -46,7 +44,7 @@ const TableComponent: React.FC<TableProps> = ({ data }) => {
               scope="col"
               className="px-6 py-3 border border-slate-300 border-separate"
             >
-              Koalisi
+              Alamat
             </th>
           </tr>
         </thead>
@@ -76,7 +74,7 @@ const TableComponent: React.FC<TableProps> = ({ data }) => {
                 {paslon.visiMisi.split(".").join("\n")}
               </td>
               <td className="px-6 py-4 border border-slate-300 border-separate">
-                {paslon.koaloasi.split(".").join("\n")}
+                {paslon.alamat}
               </td>
             </tr>
           ))}
@@ -85,5 +83,4 @@ const TableComponent: React.FC<TableProps> = ({ data }) => {
     </div>
   );
 };
-
-export default TableComponent;
+export default TabelPartai;
