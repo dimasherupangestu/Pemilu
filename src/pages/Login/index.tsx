@@ -1,6 +1,5 @@
 import React from "react";
 import Submit from "../../components/Submit";
-
 import FromInput from "../../components/From";
 
 const Login: React.FC = () => {

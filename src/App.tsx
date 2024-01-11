@@ -3,7 +3,6 @@ import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import DetailPage from "./pages/DetailPage";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
 import VotePage from "./pages/Vote";
 import ModalVotePage from "./pages/ModalVote";
 import AdminPage from "./pages/Admin";
@@ -12,6 +11,7 @@ import ListPartaiPage from "./pages/ListPartai";
 import AddPartaiPage from "./pages/AddPartai";
 import AddPaslonPage from "./pages/AddPaslon";
 import CardAdmin from "./layout/CardAdmin";
+import Register from "./pages/Register";
 
 const App: React.FC = () => {
   const [isUserLoggedIn] = useState(true);

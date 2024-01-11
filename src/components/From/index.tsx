@@ -6,13 +6,28 @@ interface FromProps {
   name: string;
   label: string;
   placeholder: string;
-  type?: "text" | "password";
+  type: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const FromInput: React.FC<FromProps> = ({ name, label, placeholder, type }) => {
+const FromInput: React.FC<FromProps> = ({
+  name,
+  label,
+  placeholder,
+  type,
+  value,
+  onChange,
+}) => {
   return (
-    <div className="s">
+    <div className="">
       <Label htmlFor={name as LabelProps["htmlFor"]}>{label}</Label>
-      <InputFrom type={type} placeholder={placeholder} name={name} />
+      <InputFrom
+        type={type}
+        placeholder={placeholder}
+        name={name}
+        value={value}
+        onChange={onChange}
+      />
     </div>
   );
 };
